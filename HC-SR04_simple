@@ -1,8 +1,12 @@
-// i can set the pins
+// Make sure open the Serial Monitor in the Tools Menu in Ardunio
+// HC-SR04 5V
+// Measures the distance between the object
+
 const int trigPin = 11;           //connects to the trigger pin on the distance sensor
 const int echoPin = 12;           //connects to the echo pin on the distance sensor
 
-float distance = 0;               //stores the distance measured by the distance sensor
+//don't think this is needed but test next time.
+//float distance = 0;               //stores the distance measured by the distance sensor
 
 void setup()
 {
@@ -27,7 +31,7 @@ void loop() {
                                           //pulse to bounce back to the sensor
 
   calculatedDistance = echoTime / 148.0;  //calculate the distance of the object that reflected the pulse (half the bounce time multiplied by the speed of sound)
-  Serial.print(distance);     //print the distance that was measured
+  Serial.print(calculatedDistance);     //print the distance that was measured
   Serial.println(" in");      //print units after the distance
   
   delay(50);      //delay 50ms between each reading
